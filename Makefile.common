@@ -1,0 +1,25 @@
+# MSP430 toolchain
+PREFIX=~/ti/gcc
+# mspdebug
+MSPDEBUG=mspdebug
+
+OBJ=$(SRC:.c=.o)
+
+CC=$(PREFIX)/bin/msp430-elf-gcc
+# -Wextra removed to get rid of -Wold-style-declaration warnings
+CFLAGS=-mmcu=$(DEVICE) -I. -I $(PREFIX)/include -g3 -Os -pedantic -Wall# -Wextra
+LFLAGS=-L $(PREFIX)/include
+
+all: $(PROJECT)
+
+$(PROJECT): $(OBJ)
+	$(CC) -mmcu=$(DEVICE) $(LFLAGS) -o $(PROJECT) $(OBJ)
+
+flash: $(PROJECT)
+	$(MSPDEBUG) rf2500 'prog $(PROJECT)'
+
+clean:
+	rm -f *.o
+	rm -f $(PROJECT)
+
+.PHONY: all flash clean
