@@ -51,6 +51,7 @@ void printf_uart(char *fmt, ...)
 {
 	/* list of arguments */
 	va_list arg;
+	int tmp;
 
 	/* va_start(argument list, last argument) */
 	va_start(arg, fmt);
@@ -60,7 +61,13 @@ void printf_uart(char *fmt, ...)
 			switch (fmt[1]) {
 			case 'i':
 			case 'd':
-				print_dec(va_arg(arg, int));
+				tmp = va_arg(arg, int);
+				if (tmp < 0) {
+					putchar_uart('-');
+					print_dec(-tmp);
+				} else {
+					print_dec(tmp);
+				}
 				fmt += 2;
 				continue;
 			case 'x':
