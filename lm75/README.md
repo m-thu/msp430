@@ -1,5 +1,5 @@
-TSL2561 digital light sensor
-============================
+LM75 temperature sensor
+=======================
 
 ## Wiring (MSP-EXP430G2 LaunchPad)
 ```
