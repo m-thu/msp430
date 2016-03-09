@@ -1,7 +1,8 @@
 MSP430
 ======
 
-* [tsl2561](tsl2561/): TSL2561 digital light sensor
+* [tsl2561](tsl2561/): TSL2561 digital light sensor (I2C)
+* [lm75](lm75/): LM75 temperature sensor (I2C)
 
 ## MSP430 LaunchPad udev rules (Ubuntu 14.04):
 ```sh
