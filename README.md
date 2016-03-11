@@ -3,6 +3,7 @@ MSP430
 
 * [tsl2561](tsl2561/): TSL2561 digital light sensor (I2C)
 * [lm75](lm75/): LM75 temperature sensor (I2C)
+* [apa102](apa102/): APA102 RGB LED (SPI)
 
 ## MSP430 LaunchPad udev rules (Ubuntu 14.04):
 ```sh
