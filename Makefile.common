@@ -7,7 +7,7 @@ OBJ=$(SRC:.c=.o)
 
 CC=$(PREFIX)/bin/msp430-elf-gcc
 # -Wextra removed to get rid of -Wold-style-declaration warnings
-CFLAGS=-mmcu=$(DEVICE) -I. -I $(PREFIX)/include -g3 -Os -pedantic -Wall# -Wextra
+CFLAGS=-mmcu=$(DEVICE) -I. -I $(PREFIX)/include -g3 -Os -pipe -pedantic -Wall# -Wextra
 LFLAGS=-L $(PREFIX)/include
 
 all: $(PROJECT)
