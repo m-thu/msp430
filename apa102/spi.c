@@ -20,7 +20,7 @@ void init_spi(void)
 	UCB0CTL0 = UCCKPH | UCMSB | UCMST | UCSYNC;
 
 	/* select SMCLK as clock source */
-	UCB0CTL1 |= UCSSEL_3;	
+	UCB0CTL1 |= UCSSEL_3;
 	/* UCBR = f_SMCLK / f_BitClock = 16 MHz / 1 MHz = 16 */
 	UCB0BR0 = 16;
 	UCB0BR1 = 0;
